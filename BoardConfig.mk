@@ -61,6 +61,7 @@ BOARD_LDPI_RECOVERY := true
 BOARD_HAS_JANKY_BACKBUFFER := true
 BOARD_NO_RGBX_8888 := true
 BOARD_USE_CUSTOM_RECOVERY_FONT := '"font_7x16.h"'
+TARGET_RECOVERY_PIXEL_FORMAT := "RGB_565"
 
 # BOOTANIMATION
 TARGET_BOOTANIMATION_PRELOAD := true
@@ -83,7 +84,7 @@ COMMON_GLOBAL_CFLAGS += -DHAVE_FM_RADIO
 BOARD_USES_QCOM_LIBRPC := true
 BOARD_USES_QCOM_GPS := true
 #BOARD_VENDOR_QCOM_AMSS_VERSION := 50000
-BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := p350
+BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE_LEGACY := msm7x27
 BOARD_VENDOR_QCOM_GPS_LOC_API_AMSS_VERSION := 50000
 
 # Qcom 
@@ -96,7 +97,7 @@ TARGET_PROVIDES_LIBRIL := true
 # USB mass storage
 BOARD_USE_USB_MASS_STORAGE_SWITCH := true
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/class/android_usb/android0/f_mass_storage/lun/file
-BOARD_UMS_LUNFILE := "/sys/class/android_usb/android0/f_mass_storage/lun/file"
+BOARD_UMS_LUNFILE := /sys/class/android_usb/android0/f_mass_storage/lun/file
 
 # Wi-Fi & Wi-Fi HotSpot
 WPA_SUPPLICANT_VERSION          := VER_0_6_X
@@ -117,6 +118,13 @@ WITH_JIT := true
 ENABLE_JSC_JIT := true
 ENABLE_WEBGL := true
 TARGET_FORCE_CPU_UPLOAD := true
+
+# Touch screen compatibility for ICS
+#BOARD_USE_LEGACY_TOUCHSCREEN := true
+
+# offline charging
+BOARD_CHARGING_CMDLINE_NAME := "lge.reboot"
+BOARD_CHARGING_CMDLINE_VALUE := "pwroff"
 
 # OTA script
 TARGET_RELEASETOOL_OTA_FROM_TARGET_SCRIPT := device/lge/p350/releasetools/ota_from_target_files

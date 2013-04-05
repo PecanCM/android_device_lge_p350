@@ -27,10 +27,10 @@ PRODUCT_COPY_FILES += \
     frameworks/base/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
     frameworks/base/data/etc/android.hardware.sensor.compass.xml:system/etc/permissions/android.hardware.sensor.compass.xml \
     frameworks/base/data/etc/android.hardware.sensor.accelerometer.xml:system/etc/permissions/android.hardware.sensor.accelerometer.xml \
-    frameworks/base/data/etc/android.hardware.sensor.proximity.xml:system/etc/permissions/android.hardware.sensor.proximity.xml \
     frameworks/base/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml \
     frameworks/base/data/etc/android.hardware.touchscreen.multitouch.distinct.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.distinct.xml \
-    packages/wallpapers/LivePicker/android.software.live_wallpaper.xml:/system/etc/permissions/android.software.live_wallpaper.xml
+    packages/wallpapers/LivePicker/android.software.live_wallpaper.xml:/system/etc/permissions/android.software.live_wallpaper.xml \
+    frameworks/base/data/etc/com.stericsson.hardware.fm.receiver.xml:system/etc/permissions/com.stericsson.hardware.fm.receiver.xml
 
 # Board-specific init
 PRODUCT_COPY_FILES += \
@@ -68,6 +68,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/AudioFilter.csv:system/etc/AudioFilter.csv \
     $(LOCAL_PATH)/configs/AutoVolumeControl.txt:system/etc/AutoVolumeControl.txt \
     $(LOCAL_PATH)/configs/media_profiles.xml:system/etc/media_profiles.xml
+
+# gps
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/gps.conf:system/etc/gps.conf \
 
 # Pecan RIL implementation
 FRAMEWORKS_BASE_SUBDIRS += ../../$(LOCAL_PATH)/ril/
@@ -116,13 +120,22 @@ PRODUCT_PACKAGES += \
     librs_jni \
     camera.msm7x27 \
     lights.msm7x27 \
-    gps.p350 \
+    gps.msm7x27 \
+    librpc \
     lgapversion
 
 PRODUCT_PACKAGES += \
     hcitool \
     hciconfig \
     hwaddrs
+
+PRODUCT_PACKAGES += \
+    charger \
+    charger_res_images
+
+PRODUCT_PACKAGES += \
+	FmRadio \
+	FmRadioReceiver \
 
 # Battery life hacks
 PRODUCT_PROPERTY_OVERRIDES += \
