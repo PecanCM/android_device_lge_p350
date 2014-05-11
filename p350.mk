@@ -8,6 +8,8 @@ $(call inherit-product-if-exists, vendor/lge/p350/p350-vendor.mk)
 $(call inherit-product-if-exists, vendor/lge/msm7x27-common/msm7x27-common-vendor-blobs.mk)
 
 DEVICE_PACKAGE_OVERLAYS += device/lge/p350/overlay
+DEVICE_PACKAGE_OVERLAYS += device/ldpi-common/overlay
+DEVICE_PACKAGE_OVERLAYS += device/ldpi-common/blank-overlay
 
 PRODUCT_AAPT_CONFIG := normal mdpi ldpi
 PRODUCT_AAPT_PREF_CONFIG := ldpi
