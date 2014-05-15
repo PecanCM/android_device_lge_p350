@@ -490,7 +490,7 @@ int loc_api_sync_ioctl
    if (select_id >= 0)
    {
       rc =  loc_ioctl(handle, ioctl_type, ioctl_data_ptr);
-      ALOGV("loc_api_sync_ioctl: select_id = %d, loc_ioctl returned %d\n", select_id, rc);
+      LOGV("loc_api_sync_ioctl: select_id = %d, loc_ioctl returned %d\n", select_id, rc);
 
       if (rc != RPC_LOC_API_SUCCESS)
       {

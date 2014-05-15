@@ -44,10 +44,10 @@ typedef unsigned char boolean;
 #define FALSE 0
 #endif
 
-#define ALOGD LOGD
+#define LOGD LOGD
 #define LOGE LOGE
-#define ALOGV LOGV
-#define ALOGW LOGW
+#define LOGV LOGV
+#define LOGW LOGW
 
 #include <loc_eng_ioctl.h>
 #include <loc_eng_xtra.h>
@@ -151,15 +151,15 @@ extern void loc_eng_mute_one_session();
 if (gps_conf.DEBUG_LEVEL >= 1) { LOGE(__VA_ARGS__); }
 
 #define LOC_LOGW(...) \
-if (gps_conf.DEBUG_LEVEL >= 2) { ALOGW(__VA_ARGS__); }
+if (gps_conf.DEBUG_LEVEL >= 2) { LOGW(__VA_ARGS__); }
 
 #define LOC_LOGI(...) \
 if (gps_conf.DEBUG_LEVEL >= 3) { ALOGI(__VA_ARGS__); }
 
 #define LOC_LOGD(...) \
-if (gps_conf.DEBUG_LEVEL >= 4) { ALOGD(__VA_ARGS__); }
+if (gps_conf.DEBUG_LEVEL >= 4) { LOGD(__VA_ARGS__); }
 
 #define LOC_LOGV(...) \
-if (gps_conf.DEBUG_LEVEL >= 5) { ALOGV(__VA_ARGS__); }
+if (gps_conf.DEBUG_LEVEL >= 5) { LOGV(__VA_ARGS__); }
 
 #endif // LOC_ENG_H

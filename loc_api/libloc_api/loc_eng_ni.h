@@ -30,11 +30,11 @@
 #ifndef LOC_ENG_NI_H
 #define LOC_ENG_NI_H
 
-#define ALOGD LOGD
+#define LOGD LOGD
 #define LOGE LOGE
 #define ALOGI LOGI
-#define ALOGV LOGV
-#define ALOGW LOGW
+#define LOGV LOGV
+#define LOGW LOGW
 
 #define LOC_NI_NO_RESPONSE_TIME            20                      /* secs */
 

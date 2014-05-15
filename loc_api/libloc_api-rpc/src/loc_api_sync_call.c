@@ -495,12 +495,12 @@ int loc_api_sync_ioctl
       while (rc == RPC_LOC_API_ENGINE_BUSY)
       {
          /* TODO: Use timeout? */
-         ALOGD("loc_api_sync_ioctl: select_id = %d, engine busy, waiting...\n", select_id);
+         LOGD("loc_api_sync_ioctl: select_id = %d, engine busy, waiting...\n", select_id);
          pthread_cond_wait(&loc_sync_data.loc_cb_arrived_cond, &loc_sync_data.lock);
          rc = loc_ioctl(handle, ioctl_type, ioctl_data_ptr);
       }
       pthread_mutex_unlock(&loc_sync_data.lock);
-      ALOGV("loc_api_sync_ioctl: select_id = %d, loc_ioctl returned %d\n", select_id, rc);
+      LOGV("loc_api_sync_ioctl: select_id = %d, loc_ioctl returned %d\n", select_id, rc);
 
       if (rc != RPC_LOC_API_SUCCESS)
       {
