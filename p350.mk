@@ -121,7 +121,6 @@ PRODUCT_PACKAGES += \
     camera.msm7x27 \
     lights.msm7x27 \
     gps.msm7x27 \
-    librpc \
     lgapversion
 
 PRODUCT_PACKAGES += \
