@@ -31,7 +31,7 @@
 #define LOC_ENG_NI_H
 
 #define ALOGD LOGD
-#define ALOGE LOGE
+#define LOGE LOGE
 #define ALOGI LOGI
 #define ALOGV LOGV
 #define ALOGW LOGW

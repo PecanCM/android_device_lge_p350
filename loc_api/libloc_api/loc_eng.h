@@ -45,7 +45,7 @@ typedef unsigned char boolean;
 #endif
 
 #define ALOGD LOGD
-#define ALOGE LOGE
+#define LOGE LOGE
 #define ALOGV LOGV
 #define ALOGW LOGW
 
@@ -148,7 +148,7 @@ extern void loc_eng_mute_one_session();
 
 /* LOGGING MACROS */
 #define LOC_LOGE(...) \
-if (gps_conf.DEBUG_LEVEL >= 1) { ALOGE(__VA_ARGS__); }
+if (gps_conf.DEBUG_LEVEL >= 1) { LOGE(__VA_ARGS__); }
 
 #define LOC_LOGW(...) \
 if (gps_conf.DEBUG_LEVEL >= 2) { ALOGW(__VA_ARGS__); }

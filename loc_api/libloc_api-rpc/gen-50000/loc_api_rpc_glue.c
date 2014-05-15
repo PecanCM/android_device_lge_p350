@@ -104,7 +104,7 @@ bool_t rpc_loc_event_cb_f_type_svc(
    /* Callback not registered, or unexpected ID (shouldn't happen) */
    if (index > LOC_API_CB_MAX_CLIENTS || loc_glue_callback_table[index].cb_func == NULL)
    {
-      ALOGE("Warning: No callback handler.\n");
+      LOGE("Warning: No callback handler.\n");
       ret->loc_event_cb_f_type_result = 0;
       return 1; /* simply return */
    }
@@ -253,7 +253,7 @@ int loc_api_glue_init(void)
 
       if (loc_api_clnt == NULL)
       {
-         ALOGE("Error: cannot create RPC client.\n");
+         LOGE("Error: cannot create RPC client.\n");
          return 0;
       }
 
@@ -266,7 +266,7 @@ int loc_api_glue_init(void)
          ALOGD("Loc API RPC client initialized.\n");
       }
       else {
-         ALOGE("Loc API callback initialization failed.\n");
+         LOGE("Loc API callback initialization failed.\n");
          return 0;
       }
    }
@@ -309,7 +309,7 @@ rpc_loc_client_handle_type loc_open (
 
    if (i == LOC_API_CB_MAX_CLIENTS)
    {
-      ALOGE("Too many clients opened at once...\n");
+      LOGE("Too many clients opened at once...\n");
       return RPC_LOC_CLIENT_HANDLE_INVALID;
    }
 

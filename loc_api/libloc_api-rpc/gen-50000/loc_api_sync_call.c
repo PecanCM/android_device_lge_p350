@@ -306,7 +306,7 @@ int loc_api_select_callback(
 
    if (select_id < 0)
    {
-      ALOGE("loc_select_callback: buffer full for this synchronous Loc API call, mask: 0x%x",
+      LOGE("loc_select_callback: buffer full for this synchronous Loc API call, mask: 0x%x",
             (unsigned) event_mask);
       return -1;
    }
@@ -391,7 +391,7 @@ int loc_api_wait_callback(
 {
    if (select_id < 0 || select_id >= loc_sync_data.size || !loc_sync_data.slot_in_use[select_id])
    {
-      ALOGE("loc_wait_callback: invalid select_id: %d", select_id);
+      LOGE("loc_wait_callback: invalid select_id: %d", select_id);
       return RPC_LOC_API_INVALID_PARAMETER;
    }
 
@@ -501,7 +501,7 @@ int loc_api_sync_ioctl
          if ((rc = loc_api_wait_callback(select_id, timeout_msec / 1000, NULL, &callback_data)) != 0)
          {
             // Callback waiting failed
-            ALOGE("loc_api_sync_ioctl: loc_api_wait_callback failed, returned %d (select id %d)\n", rc, select_id);
+            LOGE("loc_api_sync_ioctl: loc_api_wait_callback failed, returned %d (select id %d)\n", rc, select_id);
          }
          else
          {
@@ -509,7 +509,7 @@ int loc_api_sync_ioctl
             if (callback_data.status != RPC_LOC_API_SUCCESS)
             {
                rc = callback_data.status;
-               ALOGE("loc_api_sync_ioctl: IOCTL result failed, result: %d (select id %d)\n", rc, select_id);
+               LOGE("loc_api_sync_ioctl: IOCTL result failed, result: %d (select id %d)\n", rc, select_id);
             }
          } /* wait callback */
       } /* loc_ioctl */
