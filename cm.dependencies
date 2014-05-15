@@ -1,8 +1,8 @@
 [
  {
-   "repository": "android_kernel_lge_msm7x27-3.0.x",
-   "target_path": "kernel/lge/p350-3.0",
-   "branch": "3.0.8"
+   "repository": "lge_kernel_pecan",
+   "target_path": "kernel/lge/p350",
+   "branch": "android-msm-2.6.35-ics"
  }, {
    "repository": "cm_vendor_lge",
    "target_path": "vendor/lge",
