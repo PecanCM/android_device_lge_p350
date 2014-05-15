@@ -21,7 +21,7 @@ COMMON_GLOBAL_CFLAGS += -DBINDER_COMPAT
 
 # Kernel
 TARGET_PREBUILT_RECOVERY_KERNEL := device/lge/p350/recovery/recovery_kernel
-TARGET_KERNEL_SOURCE := kernel/lge/p350-3.0
+TARGET_KERNEL_SOURCE := kernel/lge/p350
 TARGET_KERNEL_CONFIG := cyanogenmod_p350_defconfig
 TARGET_SPECIFIC_HEADER_PATH := device/lge/p350/include
 BOARD_KERNEL_CMDLINE := mem=215M console=ttyMSM2,115200n8 androidboot.hardware=p350
