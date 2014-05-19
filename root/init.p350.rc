@@ -3,7 +3,8 @@ import init.qcom.rc
 
 import init.p350.usb.rc
 
-
+on fs
+     mount_all /fstab.p350
 
 
 on early-init
